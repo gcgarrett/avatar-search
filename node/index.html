@@ -11,7 +11,7 @@
         <div class="content">
             <h1 class="title">Avatar Search</h1>
             <div class="search">
-                <input type="email" ng-model="emailQuery" /><button ng-click="search()" ng-disabled="!canSearch()">Search!</button>
+                <input type="email" ng-model="emailQuery" placeholder="Enter email address" /><button ng-click="search()" ng-disabled="!canSearch()">Search!</button>
             </div>
             <div class="results" ng-class="getResultClass()">
                 <img ng-if="avatarUrl !== ''" ng-src="{{avatarUrl}}"/>
