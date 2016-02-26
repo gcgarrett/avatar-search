@@ -8,7 +8,7 @@ var bodyParser = require('body-parser'),
 // load the server settings
 var settings = require('./settings');
 
-var cacheSettings = settings.cache,
+var redisSettings = settings.redis,
     googleSettings = settings.google;
 
 // promisify redis
@@ -20,7 +20,7 @@ var app = express();
 
 // initialize googleImages and redis clients
 var imageSearchEngine = googleImages(googleSettings.id, googleSettings.api);
-var redisClient = redis.createClient(cacheSettings.port, cacheSettings.host);
+var redisClient = redis.createClient(redisSettings.port, redisSettings.host);
 
 // tell app to use bodyParser functions and set /static to the
 // static files directory
